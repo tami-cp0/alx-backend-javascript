@@ -7,5 +7,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((responses) => responses.map((response) => ({
       status: response.status,
       value: response.message,
-    })));
+    })))
+    .catch((error) => [{
+      status: 'failed',
+      value: error.message,
+    }]);
 }
