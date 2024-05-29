@@ -1,20 +1,14 @@
 import { uploadPhoto, createUser } from './utils';
 
 export default async function asyncUploadUser() {
-  let user;
-  let photo;
-
   try {
-    photo = await uploadPhoto();
+    const photo = await uploadPhoto();
+    const user = await createUser();
+    return { photo, user };
   } catch (error) {
-    photo = null;
+    return {
+      photo: null,
+      user: null,
+    };
   }
-
-  try {
-    user = await createUser();
-  } catch (error) {
-    user = null;
-  }
-
-  return { photo, user };
 }
