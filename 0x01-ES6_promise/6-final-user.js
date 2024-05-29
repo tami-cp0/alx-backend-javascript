@@ -9,7 +9,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       value: response.message,
     })))
     .catch((error) => [{
-      status: 'failed',
+      status: error.status,
       value: error.message,
     }]);
 }
