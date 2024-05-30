@@ -10,6 +10,7 @@ export default class Car {
   }
 
   cloneCar() {
+    console.log(this.constructor);
     return new this.constructor();
   }
 }
