@@ -9,8 +9,17 @@ export default class Car {
     this._color = color;
   }
 
+  // easy way out
+  // cloneCar() {
+  //   return new this.constructor();
+  // }
+
+  static get [Symbol.species]() {
+    return this;
+  }
+
   cloneCar() {
-    console.log(this);
-    return new this.constructor();
+    const Species = this.constructor[Symbol.species];
+    return new Species();
   }
 }
