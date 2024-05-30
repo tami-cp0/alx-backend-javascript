@@ -31,8 +31,4 @@ export default class Building {
     if (typeof sqft !== 'number' || !Number.isFinite(sqft)) throw new TypeError('Square foot must be a number');
     this._sqft = sqft;
   }
-
-  evacuationWarningMessage() {
-    throw new Error("Method 'evacuationWarningMessage()' must be implemented.");
-  }
 }
