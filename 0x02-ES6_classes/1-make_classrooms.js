@@ -8,7 +8,7 @@ export default function initializeRooms() {
   ];
 
   const objects = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < classRooms.length; i += 1) {
     objects.push(classRooms[i]);
   }
 
