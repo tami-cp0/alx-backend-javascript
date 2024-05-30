@@ -25,10 +25,14 @@ export default class Building {
   /**
    * Sets the square foot of the building.
    * @param {number} sqft - The new square foot of the building.
-   * @throws {TypeError} - If amount is not a finite number.
+   * @throws {TypeError} - If sqft is not a finite number.
    */
   set sqft(sqft) {
     if (typeof sqft !== 'number' || !Number.isFinite(sqft)) throw new TypeError('Square foot must be a number');
     this._sqft = sqft;
+  }
+
+  evacuationWarningMessage() {
+    throw new Error("Method 'evacuationWarningMessage()' must be implemented.");
   }
 }
