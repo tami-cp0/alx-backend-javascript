@@ -1,20 +1,14 @@
-export const HolbertonClass = (year, location) => ({
-  _year: year,
-  _location: location,
+import Car from "./10-car.js";
 
-  get year() {
-    return this._year;
-  },
+class TestCar extends Car {}
 
-  set year(year) {
-    this._year = year;
-  },
+const tc1 = new TestCar("Nissan", "Turbo", "Pink");
+const tc2 = tc1.cloneCar();
 
-  get location() {
-    return this._location;
-  },
+console.log(tc1);
+console.log(tc1 instanceof TestCar);
 
-  set location(location) {
-    this._location = location;
-  },
-});
+console.log(tc2);
+console.log(tc2 instanceof TestCar);
+
+console.log(tc1 == tc2);
