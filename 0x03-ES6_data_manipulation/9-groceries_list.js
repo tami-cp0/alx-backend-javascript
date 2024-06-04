@@ -5,7 +5,8 @@ export default function groceriesList() {
   gorceries.Tomatoes = 10;
   gorceries.Pasta = 1;
   gorceries.Rice = 1;
-  gorceries.Banana = 5;
+  gorceries.set('Banana', 5);
+
 
   return gorceries;
 }
