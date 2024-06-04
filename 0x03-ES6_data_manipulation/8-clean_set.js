@@ -4,7 +4,7 @@ export default function cleanSet(set, startString) {
   const strings = [];
   for (const value of set) {
     if (value.startsWith(startString)) {
-      strings.push(value.replace('bon', ''));
+      strings.push(value.slice(startString.length));
     }
   }
 
