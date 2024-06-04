@@ -1,7 +1,15 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
-  const results = students.map((student) => {
-    console.log(newGrades.filter((object) => object.id === student.id));
+  const results = students.filter((student) => student.location === city).map((student) => {
+    const obj = newGrades.reduce((object, current) => {
+      if (current.studentId === student.id) {
+        return { ...current };
+      }
+
+      return object;
+    }, {});
+
+    return { ...student, grade: obj.grade !== undefined ? obj.grade : 'N/A' };
   });
 
-  // return results;
+  return results;
 }
