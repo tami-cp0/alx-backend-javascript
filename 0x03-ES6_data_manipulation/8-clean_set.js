@@ -3,12 +3,25 @@ export default function cleanSet(set, startString) {
   if (!(set instanceof Set)) throw new TypeError('set must be a Set');
   if (startString === '') return '';
 
-  const strings = [];
-  for (const value of set) {
-    if (value.startsWith(startString)) {
-      strings.push(value.slice(startString.length));
-    }
-  }
+  let string = '';
 
-  return strings.join('-').toString();
+  // for (const value of set) {
+  //   if (value.startsWith(startString)) {
+  //     strings.push(value.slice(startString.length));
+  //   }
+  // }
+
+  set = Array.from(set);
+
+  set.forEach((value, index) => {
+    if (value.startsWith(startString)) {
+      if (index === 0) {
+        string += value.slice(startString.length);
+      } else {
+        string += `-${value.slice(startString.length)}`;
+      }
+    }
+  });
+
+  return string;
 }
