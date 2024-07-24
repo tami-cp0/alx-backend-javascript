@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   res.statusCode = 200;
   res.type('text/plain');
-
+  res.write('This is the list of our students\n');
   await students(process.argv[2]).then((data) => {
     res.write(`Number of students: ${data.students.length}\n`);
     res.write(`Number of students in CS: ${data.csStudents.length}. List: ${data.csStudents.join(', ')}\n`);
