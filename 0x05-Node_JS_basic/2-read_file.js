@@ -23,10 +23,12 @@ function countStudents(path) {
     }
 
     console.log(`Number of students: ${parsedData.length}`);
+    console.log(`Number of students in CS: ${groupedData.CS.length}. List: ${groupedData.CS.join(', ')}`);
+    console.log(`Number of students in SWE: ${groupedData.SWE.length}. List: ${groupedData.SWE.join(', ')}`);
 
-    Object.entries(groupedData).forEach(([key, value]) => {
-      console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
-    });
+    // Object.entries(groupedData).forEach(([key, value]) => {
+    //   console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
+    // });
   } catch (err) {
     throw new Error('Cannot load the database');
   }
